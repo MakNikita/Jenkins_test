@@ -1,12 +1,13 @@
-pipeline{
+pipeline {
 	agent any
+	
 	environment {
 		PROJECT = "PIPIPI"
-}
+	}
 	stages{
 		stage("onlyStage")
 			steps{			
-				echo "test"
-		}
+				echo "test ${PROJECT}"
+			}
 	}
 }
