@@ -1,0 +1,12 @@
+pipeline{
+	agent any
+	environment {
+		PROJECT = "PIPIPI"
+}
+	stages{
+		stage("onlyStage")
+			steps{			
+				echo "test"
+		}
+	}
+}
