@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    
+    environment {
+        PROJECT_NAME = "PIPETEST"
+        OWNER_NAME = "ME"
+    }
+    
+    stages{
+        stage("1-build"){
+            steps{
+                echo "Start of something"
+                echo "finished"
+            }
+        }
+        stage("2-build"){
+            steps{
+                echo "Start of something"
+                echo "finished"
+                echo "Hello ${OWNER_NAME}"
+                echo "project name is: ${PROJECT_NAME}"
+            }
+        }
+       stage("3-build"){
+            steps{
+                echo "Start of something"
+                echo "finished"
+                sh'''
+                echo "Line1"
+                echo "Line2"
+                
+                '''
+            }
+        }
+               stage("4-celebrate"){
+            steps{
+                echo "congritulate with something"
+                echo "finished"
+            }
+        }
+    }
+}
